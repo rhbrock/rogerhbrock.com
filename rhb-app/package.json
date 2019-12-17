@@ -10,6 +10,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "deploy": "aws cp build s3://<your_bucket_name> --recursive",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
