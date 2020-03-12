@@ -9,61 +9,59 @@ import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 
 
+// function Home(props) {
+
+//     const x = props.value;
+
+//     if (x === true) {
+//         return (
+//             <div className="">
+//                 <h1>Currently Under Construction</h1>
+//                 <p>Please check back soon</p>
+//             </div>
+//         );
+
+//     } else return <div></div>;
+
+// }
+
+// function About(props) {
+
+//     const x = props.value;
+
+//     if (x === true) {
+//         return (
+//             <div className="">
+//                 <h1>About</h1>
+//             </div>
+//         );
+
+//     } else return <div></div>;
+
+// }
 
 
-function Home(props) {
+// function Resume(props) {
 
-    const x = props.value;
+//     const x = props.value;
 
-    if (x) {
-        return (
-            <div className="">
-                <h1>Currently Under Construction</h1>
-                <p>Please check back soon</p>
-            </div>
-        );
+//     if (x === true) {
+//         return (
+//             <div className="">
+//                 <h1>Resume</h1>
+//             </div>
+//         );
 
-    } else return <div></div>;
+//     } else return <div></div>;
+// }
 
-}
+// function NavigationBar(props) {
 
-function About(props) {
+//     const home = "home";
+//     const about = "about";
+//     const resume = "resume";
 
-    const x = props.value;
-
-    if (x) {
-        return (
-            <div className="">
-                <h1>About</h1>
-            </div>
-        );
-
-    } else return <div></div>;
-
-}
-
-
-function Resume(props) {
-
-    const x = props.value;
-
-    if (x) {
-        return (
-            <div className="">
-                <h1>Resume</h1>
-            </div>
-        );
-
-    } else return <div></div>;
-}
-
-function NavigationBar(props) {
-
-    const home = "home";
-    const about = "about";
-    const resume = "resume";
-
-    return (
+//     return (
         <div>
 
             <Navbar bg="dark" variant="dark" expand="lg" >
@@ -71,9 +69,9 @@ function NavigationBar(props) {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="mr-auto">
-                        <Nav.Link value={home} onClick={(props.onClick(home))}>Home</Nav.Link>
-                        <Nav.Link value={about} onClick={props.onClick(about)}>About</Nav.Link>
-                        <Nav.Link value={resume} onClick={props.onClick(resume)}>Resume</Nav.Link>
+                        <Nav.Link  onClick={() => this.props.onClick}>Home</Nav.Link>
+                        <Nav.Link  onClick={() => this.props.onClick}>About</Nav.Link>
+                        <Nav.Link  onClick={() => this.props.onClick}>Resume</Nav.Link>
                         {/* <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
@@ -89,72 +87,47 @@ function NavigationBar(props) {
                 </Navbar.Collapse>
             </Navbar>
 
-        </div>
+//         </div>
 
-    );
-}
+//     );
+// }
 
 
 class Main extends React.Component {
-    constructor(props) {
-        super(props);
-        this.handleClick = this.handleClick.bind(this);
-        this.state = {
-            isHome: true,
-            //home: "",
-            isAbout: false,
-            //about: "",
-            isResume: false,
-            //resume: ""
-        };
-    }
+    // constructor(props) {
+    //     super(props);
+    //     this.handleClick = this.handleClick.bind(this);
+    //     // this.handleAboutClick = this.handleAboutClick.bind(this);
+    //     // this.handleResumeClick = this.handleResumeClick.bind(this);
+    //     this.state = {
+    //         isHome: true,
+    //         isAbout: false,
+    //         isResume: false,
+    //     };
+    // }
 
-    handleClick(props) {
+    // handleClick() {
 
-        const x = props.value;
-
-        // if (props.value = "home"){
-        //     if (this.state.isHome === false) {
-        //        return this.setState({ isHome: true });
-        //     } else this.setState({ isHome: false });
-        // }
-
-        if (x === "home"){
-            this.setState({ isHome: true });
-            this.setState({ isAbout: false });
-            this.setState({ isResume: false });
-        }
-
+    //     if (props.value === "home"){
+    //         this.setState({ isHome: true , isAbout: false , isResume: false });
+    //     } 
+    //      else if (props.value === "about"){
+    //         this.setState({ isHome: false , isAbout: true , isResume: false });
+    //     }
+   
+    //     this.setState({ isHome: false , isAbout: false , isResume: true });
         
-        if (x === "about"){
-            this.setState({ isHome: false });
-            this.setState({ isAbout: true });
-            this.setState({ isResume: false });
-        }
-        
-        if (x === "resume"){
-            this.setState({ isHome: false });
-            this.setState({ isAbout: false });
-            this.setState({ isResume: true });
-        }
 
-        // if (this.state.isAbout === false) {
-        //     this.setState({ isAbout: true });
-        // } else this.setState({ isAbout: false });
-
-        // if (this.state.isResume === false) {
-        //     this.setState({ isResume: true });
-        // } else this.setState({ isResume: false });
-
-    }
+    // }
 
     render() {
         return (
             <div>
-                <NavigationBar onClick={this.handleClick} />
+                {/* <NavigationBar onClick={this.handleClick}/>
                 <Home value={this.state.isHome} />
                 <About value={this.state.isAbout} />
-                <Resume value={this.state.isResume} />
+                <Resume value={this.state.isResume} /> */}
+                Hello
             </div>
         );
     }
@@ -162,4 +135,4 @@ class Main extends React.Component {
 }
 
 
-ReactDOM.render(<Main />, document.getElementById('root'));
+ReactDOM.render(<Main />, document.getElementById('root')); 
